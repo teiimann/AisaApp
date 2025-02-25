@@ -1,0 +1,18 @@
+
+# Для Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Для Node.js
+node_modules/
+dist/
+.env
+.env.local
+.next
+
+# Для IDE
+.vscode/
+.idea/
