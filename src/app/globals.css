@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define root variables */
+:root {
+  --background: #ffffff; /* Light background */
+  --foreground: #000000; /* Light text color */
+}
+
+/* Dark mode styles */
+.dark {
+  --background: #1a202c; /* Dark background */
+  --foreground: #f7fafc; /* Dark text color */
+}
+
+/* Media query for system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; /* Dark background */
+    --foreground: #ededed; /* Dark text color */
+  }
+}
+
+/* General body styles */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utility for balanced text wrapping */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem; /* Add padding for smaller screens */
+  }
+
+  .surveyBox {
+    padding: 20px; /* Reduce padding for smaller screens */
+    max-width: 90%; /* Make width responsive */
+  }
+
+  .heading {
+    font-size: 24px; /* Smaller font size */
+  }
+
+  .questionText {
+    font-size: 18px; /* Smaller font size for questions */
+  }
+
+  .button {
+    padding: 8px 16px; /* Smaller button padding */
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    padding: 2rem; /* More padding for larger screens */
+  }
+
+  .surveyBox {
+    padding: 30px; /* Default padding for larger screens */
+    max-width: 800px; /* Max width for larger screens */
+  }
+
+  .heading {
+    font-size: 28px; /* Larger font size */
+  }
+
+  .questionText {
+    font-size: 20px; /* Larger font size for questions */
+  }
+
+  .button {
+    padding: 10px 20px; /* Default button padding */
+  }
+}
